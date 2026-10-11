@@ -1,0 +1,16 @@
+{
+  "name": "@harmonious-union/term-services",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Glossary-services node accountable for acts on terms.",
+  "exports": {
+    ".": "./src/contract-term-definition.mjs",
+    "./operations": "./src/term-operations.mjs"
+  },
+  "scripts": {
+    "check": "node --check src/contract-term-definition.mjs && node --check src/term-operations.mjs",
+    "test": "node --test test/*.test.mjs",
+    "verify": "npm run check && npm test"
+  }
+}

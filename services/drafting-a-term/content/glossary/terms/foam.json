@@ -1,0 +1,9 @@
+{
+  "id": "foam",
+  "name": "FOAM",
+  "definition": "FOAM is the Field of Articulating Models.\nFOAM is one of the two things that SEA has, alongside MUD.",
+  "x-provenance": {
+    "recorded-by": "content-librarian",
+    "recorded-on": "2026-07-30"
+  }
+}

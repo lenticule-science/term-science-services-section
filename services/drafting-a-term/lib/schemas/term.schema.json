@@ -1,0 +1,63 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "emsenn/schema/term",
+  "title": "Term",
+  "description": "The class of glossary term records. A term is an INSTANCE — a definition entry seated in a glossary (content/glossary/terms/) — never a schema. What a kind of record must look like is a CLASS, and classes seat in the schema pool (lib/schemas/); a term that needs one points at it with specified-by rather than trying to be it.",
+  "$comment": "This class replaces the doctrine under which 'a term IS a JSON Schema' and the glossary doubled as the schema pool. That identity is exactly the class/instance conflation the firm keeps re-deriving its way back into: a record that is simultaneously the contract and a thing under contract cannot be spoken about intelligibly, because every sentence about it is true at one level and false at the other. So: classes in lib, instances in content, and a term is an instance. Its definition is prose a reader uses; the machine-checkable shape of the things the term names, when there is one, lives in the class the term points at.",
+  "type": "object",
+  "required": [
+    "id",
+    "name",
+    "definition"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "id": {
+      "type": "string",
+      "pattern": "^[a-z0-9]+(-[a-z0-9]+)*$",
+      "$comment": "Equal to the record's basename; the glossary resolves a term by the name it is filed under."
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "What the term is called, as it is said."
+    },
+    "definition": {
+      "type": "string",
+      "minLength": 1,
+      "$comment": "What the term means, as prose a reader uses. One term, one place it is defined — the content-librarian's rule."
+    },
+    "specified-by": {
+      "type": "string",
+      "pattern": "^emsenn/schema/[a-z0-9]+(-[a-z0-9]+)*$",
+      "$comment": "The class in the schema pool that gives the things this term names their machine-checkable shape, when there is one. The term defines the word; the class constrains the records."
+    },
+    "see-also": {
+      "type": "array",
+      "uniqueItems": true,
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "x-source": {
+      "type": "object"
+    },
+    "x-provenance": {
+      "type": "object"
+    },
+    "x-evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      },
+      "minItems": 1,
+      "description": "In-corpus citations (file/line + short quote) grounding the term's evidence grade; optional."
+    }
+  },
+  "x-provenance": {
+    "recorded-by": "claude-session",
+    "recorded-on": "2026-07-16"
+  }
+}
