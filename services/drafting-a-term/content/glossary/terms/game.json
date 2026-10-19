@@ -1,9 +1,0 @@
-{
-  "id": "game",
-  "name": "GAME",
-  "definition": "GAME is Generate Action Matrix Eigenvalues.",
-  "x-provenance": {
-    "recorded-by": "content-librarian",
-    "recorded-on": "2026-07-30"
-  }
-}
