@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-import { spawnSync } from "node:child_process"; import { dirname, join } from "node:path"; import { fileURLToPath } from "node:url";
-const service=process.argv[2], expected="communicating-services-section/glossary-services-section/term-services/drafting-a-term"; if(process.env.EMSENN_SUBSECTION_CONTRACT!=="glossary-services-section-contracts-term-services"||service!==expected){process.stderr.write("refused: term services require the glossary-services contract\n");process.exit(1)}
-const target=join(dirname(fileURLToPath(import.meta.url)),"../services/drafting-a-term/src/drafting-a-term.js"); const r=spawnSync(process.execPath,[target,...process.argv.slice(3)],{stdio:"inherit",env:{...process.env,EMSENN_SERVICE_GROUP_CONTRACT:"term-services-contracts-drafting-a-term"}});process.exit(r.status??1);

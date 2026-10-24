@@ -8,3 +8,10 @@
 <!-- 561-group-standards:badges:end -->
 
 Glossary-services node accountable for acts on terms.
+
+## Code
+
+This repository holds section data only. The executable code that used to live here moved to
+[`red-cup-engineering/term-services`](https://github.com/red-cup-engineering/term-services) (received 2026-10-24 from
+`lenticule-science/term-services@54ce1b8f751a`). That engine reads this data from `SECTION_ROOT` (default: its current working directory),
+so point `SECTION_ROOT` at a checkout of this repository.
