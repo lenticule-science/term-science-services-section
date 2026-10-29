@@ -1,4 +1,4 @@
 [submodule "drafting-a-term"]
 	path = services/drafting-a-term
-	url = https://github.com/lenticule-science/drafting-a-term.git
+	url = https://github.com/lenticule-science/drafting-a-term-science-services-section.git
 	branch = main
